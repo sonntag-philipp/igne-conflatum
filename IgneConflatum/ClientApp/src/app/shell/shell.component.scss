@@ -1,0 +1,30 @@
+.toolbar {
+    height: 56px;
+}
+
+.container {
+    height: 100%;
+}
+
+.container-sidenav {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-sidenav {
+    height: 100%;
+    min-width: 12%;
+}
+
+.container-content {
+    height: 100%;
+}
+
+.img-logo {
+    align-self: center;
+}
+
+.sidenav-title {
+    align-self: center;
+    font-family: Roboto, sans-serif;
+}
