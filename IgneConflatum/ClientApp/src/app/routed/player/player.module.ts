@@ -1,3 +1,4 @@
+import { DomainModule } from './../../domain/domain.module';
 import { ConnectionModule } from './../../service/connection/connection.module';
 import { AppMaterialModule } from './../../app-material.module';
 import { NgModule } from '@angular/core';
@@ -20,7 +21,8 @@ import { PlayerCharComponent } from './player-char/player-char.component';
     CommonModule,
     PlayerRoutingModule,
     AppMaterialModule,
-    ConnectionModule
+    ConnectionModule,
+    DomainModule
   ]
 })
 export class PlayerModule { }
