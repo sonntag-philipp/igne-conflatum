@@ -1,32 +1,26 @@
-import { MasterModule } from './routed/master/master.module';
+import { AppMaterialModule } from './app-material.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppMaterialModule } from './app-material.module';
-import { ShellComponent } from './shell/shell.component';
-import { ShellService } from './shell/shell.service';
-import { PlayerModule } from './routed/player/player.module';
+import { CharInfoComponent } from './widget/char-info/char-info.component';
+import { CharBoardComponent } from './routed/char-board/char-board.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShellComponent
+    CharInfoComponent,
+    CharBoardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppMaterialModule,
-    MasterModule,
-    PlayerModule
+    AppMaterialModule
   ],
-  providers: [
-    ShellService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

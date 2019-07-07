@@ -3,10 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  connection: {
-    address: "https://localhost:5001/game"
-  }
+  production: false
 };
 
 /*

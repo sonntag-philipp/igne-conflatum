@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>{{ character.name }}</mat-card-title>
+  <mat-card-content>
+    <div class="char-bar" *ngFor="let bar of character.bars">
+      <mat-card-subtitle class="char-bar-title">{{ bar.name }}</mat-card-subtitle>
+      <mat-progress-bar  color="primary" [value]="bar.value"></mat-progress-bar>
+    </div>
+    <mat-list>
+      <mat-list-item [ngStyle]="{'background-color': 'rgba(' + effect.color + ', 0.3)'}" class="effect-item" *ngFor="let effect of character.effects">
+        <p matLine>{{ effect.name }}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
