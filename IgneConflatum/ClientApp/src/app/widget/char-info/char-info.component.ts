@@ -1,5 +1,10 @@
+import { BarEditDialog } from './../bar-edit-dialog/bar-edit.dialog';
+import { MatDialog } from '@angular/material';
+import { Bar } from './../../shared/models/bar';
 import { Character } from './../../shared/models/character';
 import { Component, OnInit, Input } from '@angular/core';
+import { Effect } from 'src/app/shared/models/effect';
+import { EffectEditDialog } from '../effect-edit-dialog/effect-edit.dialog';
 
 @Component({
   selector: 'ic-char-info',
@@ -10,7 +15,43 @@ export class CharInfoComponent implements OnInit {
 
   @Input() character: Character;
 
-  constructor() { }
+  public onBarClicked(bar: Bar) {
+    this.dialog.open(BarEditDialog, {
+      data: {
+        bar: bar
+      }
+    }).afterClosed().subscribe(
+      result => {
+        if(result === null) {
+          this.character.bars.splice(this.character.bars.indexOf(bar), 1);
+        }
+
+        if(result !== undefined && result !== null) {
+          bar = result;
+        }
+      }
+    );
+  }
+
+  public onEffectClicked(effect: Effect) {
+    this.dialog.open(EffectEditDialog, {
+      data: {
+        effect: effect
+      }
+    }).afterClosed().subscribe(
+      result => {
+        if(result === null) {
+          this.character.effects.splice(this.character.effects.indexOf(effect), 1);
+        }
+
+        if(result !== undefined && result !== null) {
+          effect = result;
+        }
+      }
+    );
+  }
+
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }

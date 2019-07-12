@@ -1,0 +1,16 @@
+<mat-dialog-content>
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Name" #name [value]="bar.name">
+  </mat-form-field>
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Wert" #value [value]="bar.value">
+  </mat-form-field>
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Maximalwert" #max [value]="bar.max === undefined ? 100 : bar.max">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="actions">
+  <button mat-icon-button (click)="saveChanges(name, value, max)" color="primary"><mat-icon>save</mat-icon></button>
+  <button mat-icon-button (click)="discardChanges()" color="primary"><mat-icon>cancel</mat-icon></button>
+  <button mat-icon-button (click)="removeEntry()" color="warn"><mat-icon>remove_circle_outline</mat-icon></button>
+</mat-dialog-actions>

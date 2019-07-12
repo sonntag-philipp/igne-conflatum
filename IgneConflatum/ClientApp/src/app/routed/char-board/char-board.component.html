@@ -1,3 +1,9 @@
 <div class="charboard-container">
-  <ic-char-info [character]="char" *ngFor="let char of characters"></ic-char-info>
+  <ic-char-info (click)="openEditDialog(char);" class="charboard-item center" [character]="char" *ngFor="let char of fieldCharacters"></ic-char-info>
+  <ic-char-list class="charboard-item" [characters]="listCharacters"></ic-char-list>
 </div>
+<mat-button-toggle-group class="navigation" name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle (click)="stepForward()" value="forward"><mat-icon>keyboard_arrow_left</mat-icon></mat-button-toggle>
+  <mat-button-toggle value="pause"><mat-icon>pause</mat-icon></mat-button-toggle>
+  <mat-button-toggle (click)="stepBack()" value="back"><mat-icon>keyboard_arrow_right</mat-icon></mat-button-toggle>
+</mat-button-toggle-group>

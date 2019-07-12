@@ -3,12 +3,15 @@
   <mat-card-content>
     <div class="char-bar" *ngFor="let bar of character.bars">
       <mat-card-subtitle class="char-bar-title">{{ bar.name }}</mat-card-subtitle>
-      <mat-progress-bar  color="primary" [value]="bar.value"></mat-progress-bar>
+      <mat-progress-bar (click)="onBarClicked(bar)" color="primary" [value]="bar.max === undefined ? bar.value : ((100/bar.max) * bar.value)"></mat-progress-bar>
+      <p class="progress-bar-subtitle">{{ bar.value }}/{{ (bar.max === undefined ? 100 : bar.max) }}</p>
     </div>
     <mat-list>
-      <mat-list-item [ngStyle]="{'background-color': 'rgba(' + effect.color + ', 0.3)'}" class="effect-item" *ngFor="let effect of character.effects">
-        <p matLine>{{ effect.name }}</p>
-      </mat-list-item>
+      <div *ngFor="let effect of character.effects">
+        <mat-list-item (click)="onEffectClicked(effect)" *ngIf="effect.rounds > 0" [ngStyle]="{'background-color': 'rgba(' + effect.color + ', 0.3)'}" class="effect-item" >
+          <div class="effect-line" matLine>{{ effect.name }}<span *ngIf="effect.rounds > 1" class="effect-rounds">{{ effect.rounds }}</span></div>
+        </mat-list-item>
+      </div>
     </mat-list>
   </mat-card-content>
 </mat-card>

@@ -1,0 +1,13 @@
+<mat-dialog-content>
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Name" #name [value]="effect.name">
+  </mat-form-field>
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Runden" #rounds [value]="effect.rounds">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="actions">
+  <button mat-icon-button (click)="saveChanges(name, rounds)" color="primary"><mat-icon>save</mat-icon></button>
+  <button mat-icon-button (click)="discardChanges()" color="primary"><mat-icon>cancel</mat-icon></button>
+  <button mat-icon-button (click)="removeEntry()" color="warn"><mat-icon>remove_circle_outline</mat-icon></button>
+</mat-dialog-actions>

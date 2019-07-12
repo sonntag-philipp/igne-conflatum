@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span>Peter Siemens</span>
+</mat-toolbar>
+<div class="content">
+  <ic-char-info [character]="char"></ic-char-info>
+</div>
+<mat-toolbar class="edit-bar" color="accent">
+  <button mat-stroked-button (click)="addBar()">+ Bar</button>
+  <button mat-stroked-button (click)="addEffect()">+ Effect</button>
+</mat-toolbar>

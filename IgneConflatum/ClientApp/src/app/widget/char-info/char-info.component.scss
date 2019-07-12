@@ -1,5 +1,8 @@
 .char-bar-title {
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
+    font-size: 1.1em;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
 }
 
 .char-bar {
@@ -8,4 +11,24 @@
 
 .effect-item {
     border-radius: 32px;
+    margin: 4px 0 4px 0;
+}
+
+.effect-line {
+    display: flex!important;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.effect-rounds {
+    background-color: rgba(255,255,255,0.6);
+    width: 19px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.progress-bar-subtitle {
+    margin: 0;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.4);
 }

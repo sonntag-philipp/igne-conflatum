@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>
+    Nächste Spieler:
+  </mat-card-title>
+  <mat-list>
+    <mat-list-item *ngFor="let char of characters">
+      <mat-icon matListIcon>face</mat-icon>
+      <h3 matLine> {{ char.name }} </h3>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
