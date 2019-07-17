@@ -1,24 +1,37 @@
 .container {
   margin-bottom: 0;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .index-container {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.image {
+  align-self: center;
+  max-width: 384px;
 }
 
 .headline {
+  align-self: center;
+  font-size: 21pt;
   margin: 0;
-  padding: 16px 0 0 0;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: normal;
-  text-align: center;
+  font-family: 'Bahianita', cursive;
 }
 
 .sub-headline {
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  align-self: center;
+  font-family: 'Bahianita', cursive;
+  font-size: 35pt;
+  color: #d12000;
+  margin: 8px 0 16px 0;
   font-weight: normal;
-  text-align: center;
+}
+
+.button {
+  align-self: center;
 }

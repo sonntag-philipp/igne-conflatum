@@ -1,3 +1,4 @@
+import { ShellService } from './../../shared/shell.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shellService: ShellService) { 
+    shellService.visible = false;
+  }
 
   ngOnInit() {
   }

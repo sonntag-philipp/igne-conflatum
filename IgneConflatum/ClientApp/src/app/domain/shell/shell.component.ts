@@ -1,3 +1,4 @@
+import { ShellService } from './../../shared/shell.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ export class ShellComponent implements OnInit {
 
   public navBarOpen = false;
 
-  constructor() { }
+  constructor(public shellService: ShellService) { }
 
   ngOnInit() {
   }

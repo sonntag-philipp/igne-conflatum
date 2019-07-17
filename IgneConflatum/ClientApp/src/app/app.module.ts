@@ -21,6 +21,7 @@ import { CharacteristicsEffectComponent } from './widget/characteristics/charact
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ShellComponent } from './domain/shell/shell.component';
+import { ShellService } from './shared/shell.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ShellComponent } from './domain/shell/shell.component';
   ],
   providers: [
     ConnectionService,
-    CharacterService
+    CharacterService,
+    ShellService
   ],
   bootstrap: [AppComponent],
   entryComponents: [

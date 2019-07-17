@@ -1,5 +1,6 @@
 <mat-sidenav-container class="container">
-    <mat-sidenav
+    <mat-sidenav 
+      *ngIf="shellService.visible"
       mode="over"
       [opened]="navBarOpen"
     >
@@ -13,7 +14,7 @@
       </div>
     </mat-sidenav>
     <mat-sidenav-content class="container-content">
-      <mat-toolbar class="toolbar" color="primary">
+      <mat-toolbar *ngIf="shellService.visible" class="toolbar" color="primary">
         <button mat-icon-button (click)="navBarOpen = !navBarOpen">
           <mat-icon>menu</mat-icon>
         </button>
