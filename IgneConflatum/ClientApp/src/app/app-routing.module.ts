@@ -2,10 +2,11 @@ import { CharEditComponent } from './routed/char-edit/char-edit.component';
 import { CharBoardComponent } from "./routed/char-board/char-board.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { IndexComponent } from './routed/index/index.component';
 
 const routes: Routes = [
   {
-    path: "charboard",
+    path: "board",
     component: CharBoardComponent
   },
   {
@@ -15,7 +16,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'charboard'
+    component: IndexComponent
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: ''
   }
 ];
 

@@ -1,0 +1,25 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav
+      mode="over"
+      [opened]="navBarOpen"
+    >
+      <div class="container-sidenav">
+        <h3 class="sidenav-title">Igne Conflatum</h3>
+        <img class="img-logo" src="assets/icons/icon-128x128.png" alt="Logo">
+        <mat-action-list>
+          <button mat-list-item class="link-list-item" routerLink="board">Board</button>
+          <button mat-list-item routerLink="edit">Character</button>
+        </mat-action-list>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="container-content">
+      <mat-toolbar class="toolbar" color="primary">
+        <button mat-icon-button (click)="navBarOpen = !navBarOpen">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Igne Conflatum</span>
+      </mat-toolbar>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

@@ -27,10 +27,16 @@ export class BarEditDialog {
     }
 
   public saveChanges(name: any, value: any, max: any) {
-    this.bar.name = name.value;
-    this.bar.value = value.value;
-    this.bar.max = max.value;
-    this.dialogRef.close(this.bar);
+    if(isNaN(value.value) || isNaN(max.value)) {
+      this.discardChanges();
+    }
+    else {
+      this.bar.name = name.value;
+      this.bar.value = value.value;
+      this.bar.max = max.value;
+      this.dialogRef.close(this.bar);
+    }
+
   }
 
   public discardChanges() {

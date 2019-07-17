@@ -1,3 +1,4 @@
+import { CharacterService } from './../../shared/character.service';
 import { BarEditDialog } from './../../widget/bar-edit-dialog/bar-edit.dialog';
 import { EffectEditDialog } from './../../widget/effect-edit-dialog/effect-edit.dialog';
 import { MatDialog } from '@angular/material';
@@ -5,6 +6,7 @@ import { Effect } from './../../shared/models/effect';
 import { Bar } from './../../shared/models/bar';
 import { Character } from './../../shared/models/character';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ic-char-edit',
@@ -13,13 +15,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharEditComponent implements OnInit {
 
-  
-  private _char : Character;
+  public charName: string;
+
   public get char() : Character {
-    return this._char;
-  }
-  public set char(v : Character) {
-    this._char = v;
+    const c = this.characterService.characters.find(x => x.name === this.charName);
+    if(c === undefined) {
+      var chara = {
+        name: this.charName,
+        bars: [],
+        effects: []
+      };
+      this.characterService.characters.push(chara);
+      this.characterService.updateCharacter(chara);
+    }
+    return this.characterService.characters.find(x => x.name === this.charName);
   }
 
   public addEffect(): void {
@@ -41,6 +50,10 @@ export class CharEditComponent implements OnInit {
         if(result !== undefined && result !== null) {
           effect = result;
           this.char.effects.push(effect);
+        }
+
+        if(result !== undefined) {
+          this.characterService.updateCharacter(this.char);
         }
       }
     );
@@ -65,92 +78,24 @@ export class CharEditComponent implements OnInit {
           bar = result;
           this.char.bars.push(bar);
         }
+
+        if(result !== undefined) {
+          this.characterService.updateCharacter(this.char);
+        }
       }
     );
   }
 
-  
+  constructor(private dialog: MatDialog, private characterService: CharacterService, route: ActivatedRoute) { 
+    route.params.subscribe(params => {
+      route.params.subscribe(params => {
+        this.charName = params.name;
+      });
+    });
 
-  constructor(private dialog: MatDialog) { }
+  }
 
   ngOnInit() {
-    this.char = 
-    {
-      name: "Pietro Lamborghini",
-      effects: [
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        },
-        {
-          name: "Mit kacke verschmiert",
-          color: "133, 62, 21",
-          rounds: 3
-        }
-      ],
-      bars: [
-        {
-          name: "Leben",
-          value: 50,
-          max: 200
-        },
-        {
-          name: "Mana",
-          value: 42
-        }
-      ]
-    };
   }
 
 }

@@ -1,0 +1,30 @@
+.container {
+  margin: 16px;
+  padding: 8px;
+}
+
+.container-title {
+  display: flex;
+}
+
+.container-title-icon {
+  align-self: center;
+  font-size: 32px;
+  height: 32px;
+  width: 32px;
+  margin: 0 16px 0 0;
+}
+
+.container-title-text {
+  align-self: center;
+}
+
+.container-content {
+  padding: 8px 0 8px 0;
+}
+
+.container-content-effects {
+  padding: 8px 0 8px 0;
+  display: flex;
+  flex-direction: row;
+}

@@ -1,9 +1,12 @@
 <mat-card>
-  <mat-card-title>{{ character.name }}</mat-card-title>
+  <mat-card-title class="char-info-headline">
+    <mat-icon>face</mat-icon>
+    {{ character.name }}
+  </mat-card-title>
   <mat-card-content>
-    <div class="char-bar" *ngFor="let bar of character.bars">
+    <div class="char-bar" (click)="onBarClicked(bar)" *ngFor="let bar of character.bars">
       <mat-card-subtitle class="char-bar-title">{{ bar.name }}</mat-card-subtitle>
-      <mat-progress-bar (click)="onBarClicked(bar)" color="primary" [value]="bar.max === undefined ? bar.value : ((100/bar.max) * bar.value)"></mat-progress-bar>
+      <mat-progress-bar  color="primary" [value]="bar.max === undefined ? bar.value : ((100/bar.max) * bar.value)"></mat-progress-bar>
       <p class="progress-bar-subtitle">{{ bar.value }}/{{ (bar.max === undefined ? 100 : bar.max) }}</p>
     </div>
     <mat-list>

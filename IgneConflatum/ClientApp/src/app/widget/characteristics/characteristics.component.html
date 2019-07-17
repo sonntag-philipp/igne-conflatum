@@ -1,0 +1,16 @@
+<mat-card class="container">
+  <mat-card-title class="container-title">
+    <mat-icon class="container-title-icon">face</mat-icon>
+    <span class="container-title-text">{{ character.name }}</span>
+  </mat-card-title>
+  <mat-card-content >
+    <mat-divider></mat-divider>
+    <div class="container-content">
+      <ic-characteristics-bar *ngFor="let bar of character.bars" [bar]="bar"></ic-characteristics-bar>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="container-content-effects">
+      <ic-characteristics-effect *ngFor="let effect of character.effects" [effect]="effect"></ic-characteristics-effect>
+    </div>
+  </mat-card-content>
+</mat-card>

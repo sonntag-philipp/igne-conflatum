@@ -1,7 +1,10 @@
 <div class="charboard-container">
-  <ic-char-info (click)="openEditDialog(char);" class="charboard-item center" [character]="char" *ngFor="let char of fieldCharacters"></ic-char-info>
-  <ic-char-list class="charboard-item" [characters]="listCharacters"></ic-char-list>
+  <!-- <ic-char-info class="charboard-item center" [character]="char" *ngFor="let char of characterService.characters.slice(0, 3)"></ic-char-info> -->
+  <!-- <ic-char-list class="charboard-item" [characters]="characterService.characters.slice(3, characterService.characters.length).reverse()"></ic-char-list> -->
+  <ic-characteristics *ngFor="let char of characterService.characters.slice(0, 4)" [character]="char"></ic-characteristics>
 </div>
+
+
 <mat-button-toggle-group class="navigation" name="fontStyle" aria-label="Font Style">
   <mat-button-toggle (click)="stepForward()" value="forward"><mat-icon>keyboard_arrow_left</mat-icon></mat-button-toggle>
   <mat-button-toggle value="pause"><mat-icon>pause</mat-icon></mat-button-toggle>

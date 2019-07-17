@@ -25,9 +25,14 @@ export class EffectEditDialog {
     }
 
   public saveChanges(name: any, rounds: any) {
-    this.effect.name = name.value;
-    this.effect.rounds = rounds.value;
-    this.dialogRef.close(this.effect);
+    if(isNaN(rounds.value)) {
+      this.discardChanges();
+    }
+    else {
+      this.effect.name = name.value;
+      this.effect.rounds = rounds.value;
+      this.dialogRef.close(this.effect);
+    }
   }
 
   public discardChanges() {

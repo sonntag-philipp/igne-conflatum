@@ -1,3 +1,4 @@
+import { CharacterService } from './../../shared/character.service';
 import { BarEditDialog } from './../bar-edit-dialog/bar-edit.dialog';
 import { MatDialog } from '@angular/material';
 import { Bar } from './../../shared/models/bar';
@@ -11,7 +12,7 @@ import { EffectEditDialog } from '../effect-edit-dialog/effect-edit.dialog';
   templateUrl: './char-info.component.html',
   styleUrls: ['./char-info.component.scss']
 })
-export class CharInfoComponent implements OnInit {
+export class CharInfoComponent {
 
   @Input() character: Character;
 
@@ -28,6 +29,11 @@ export class CharInfoComponent implements OnInit {
 
         if(result !== undefined && result !== null) {
           bar = result;
+        }
+
+        if(result !== undefined) {
+          console.log("UpdateChar");
+          this.characterService.updateCharacter(this.character);
         }
       }
     );
@@ -47,13 +53,15 @@ export class CharInfoComponent implements OnInit {
         if(result !== undefined && result !== null) {
           effect = result;
         }
+
+        if(result !== undefined) {
+          console.log("UpdateChar");
+          this.characterService.updateCharacter(this.character);
+        }
       }
     );
   }
 
-  constructor(private dialog: MatDialog) { }
-
-  ngOnInit() {
+  constructor(private dialog: MatDialog, private characterService: CharacterService) {
   }
-
 }
