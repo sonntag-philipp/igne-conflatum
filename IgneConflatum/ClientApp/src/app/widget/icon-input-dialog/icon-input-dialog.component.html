@@ -1,0 +1,10 @@
+<h1 class="title" mat-dialog-title><mat-icon class="icon">{{ data.icon }}</mat-icon>{{ data.prompt }}</h1>
+<mat-dialog-content>
+  <mat-form-field class="input-field">
+    <input matInput [placeholder]="data.placeholder !== null ? data.placeholder : ''" #value>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="actions">
+  <button mat-icon-button (click)="saveChanges(value)" color="primary"><mat-icon>check_circle</mat-icon></button>
+  <button mat-icon-button (click)="discardChanges()" color="warn"><mat-icon>cancel</mat-icon></button>
+</mat-dialog-actions>

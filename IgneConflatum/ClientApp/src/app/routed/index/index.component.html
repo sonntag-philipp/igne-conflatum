@@ -1,8 +1,15 @@
-<div class="index-container">
-  <h2 class="headline">Welcome to</h2>
-  <img class="image" src="assets/icons/icon-384x384.png" alt="Logo">
-  <h1 class="sub-headline">Igne Conflatum</h1>
-  <button class="button" mat-stroked-button>
-    begin your journey
-  </button>
-</div>
+<div class="container">
+    <button class="button" mat-raised-button>
+      <h2 class="button-headline">Open board</h2>
+      <mat-icon class="icon">dashboard</mat-icon>
+    </button>
+    <div class="index-container">
+      <h2 class="headline">Welcome to</h2>
+      <img class="image" src="assets/icons/icon-384x384.png" alt="Logo">
+      <h1 class="sub-headline">Igne Conflatum</h1>
+    </div>
+    <button (click)="loadCharacter()" class="button" mat-raised-button>
+      <h2 class="button-headline">Load character</h2>
+      <mat-icon class="icon">account_circle</mat-icon>
+    </button>
+  </div>

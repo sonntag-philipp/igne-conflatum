@@ -22,6 +22,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ShellComponent } from './domain/shell/shell.component';
 import { ShellService } from './shared/shell.service';
+import { IconInputDialog } from './widget/icon-input-dialog/icon-input-dialog.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { ShellService } from './shared/shell.service';
     CharacteristicsComponent,
     CharacteristicsBarComponent,
     CharacteristicsEffectComponent,
-    ShellComponent
+    ShellComponent,
+    IconInputDialog
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { ShellService } from './shared/shell.service';
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
+    RouterModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
@@ -54,7 +58,8 @@ import { ShellService } from './shared/shell.service';
   bootstrap: [AppComponent],
   entryComponents: [
     BarEditDialog,
-    EffectEditDialog
+    EffectEditDialog,
+    IconInputDialog
   ]
 })
 export class AppModule { }
