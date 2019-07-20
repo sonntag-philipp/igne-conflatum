@@ -1,11 +1,11 @@
 {
-  "name": "igne-conflatum",
-  "short_name": "igne-conflatum",
+  "name": "Igne Conflatum",
+  "short_name": "ic",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/edit/Peter Siemens",
+  "start_url": "/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

@@ -70,6 +70,7 @@ export class CharEditComponent implements OnInit {
       }
     }).afterClosed().subscribe(
       result => {
+        console.log(result);
         if(result === null && this.char.bars.indexOf(bar) > -1) {
           this.char.bars.splice(this.char.bars.indexOf(bar), 1);
         }

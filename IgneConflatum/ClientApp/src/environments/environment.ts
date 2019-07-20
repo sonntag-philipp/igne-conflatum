@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  hubAddress: "https://192.168.178.119:5001/game"
+  hubAddress: "https://delaiyoid.de:5001/game"
 };
 
 /*

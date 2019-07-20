@@ -15,18 +15,21 @@ export class IndexComponent {
   loadCharacter(): void {
     this.dialog.open(IconInputDialog, {
       data: {
-        prompt: "Character id",
+        prompt: "Character name",
         icon: "account_circle",
-        placeholder: "ID"
+        placeholder: "Name"
       }
     }).afterClosed().subscribe(
       result => {
         if(result !== undefined) {
-          console.log(result);
           this.router.navigate(["/edit", result]);
         }
       }
     );
+  }
+
+  loadBoard(): void {
+    this.router.navigate(["/board"]);
   }
 
 }
