@@ -18,13 +18,13 @@ export class CharacterService {
       bars: [
         {
           name: "Leben",
-          value: 75,
-          max: 100
+          value: 140,
+          max: 150
         },
         {
           name: "Mana",
-          value: 43,
-          max: 100
+          value: 12,
+          max: 20
         }
       ]
     },
@@ -40,13 +40,13 @@ export class CharacterService {
       bars: [
         {
           name: "Leben",
-          value: 75,
-          max: 100
+          value: 100,
+          max: 200
         },
         {
           name: "Mana",
-          value: 43,
-          max: 100
+          value: 21,
+          max: 40
         }
       ]
     },
@@ -62,13 +62,13 @@ export class CharacterService {
       bars: [
         {
           name: "Leben",
-          value: 75,
-          max: 100
+          value: 84,
+          max: 125
         },
         {
           name: "Mana",
-          value: 43,
-          max: 100
+          value: 33,
+          max: 45
         }
       ]
     },
@@ -84,13 +84,13 @@ export class CharacterService {
       bars: [
         {
           name: "Leben",
-          value: 75,
-          max: 100
+          value: 50,
+          max: 82
         },
         {
           name: "Mana",
-          value: 43,
-          max: 100
+          value: 12,
+          max: 41
         }
       ]
     },
@@ -106,8 +106,8 @@ export class CharacterService {
       bars: [
         {
           name: "Leben",
-          value: 75,
-          max: 100
+          value: 50,
+          max: 71
         },
         {
           name: "Mana",

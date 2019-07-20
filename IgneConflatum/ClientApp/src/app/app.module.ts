@@ -23,6 +23,7 @@ import { ShellComponent } from './domain/shell/shell.component';
 import { ShellService } from './shared/shell.service';
 import { IconInputDialog } from './widget/icon-input-dialog/icon-input-dialog.component';
 import { RouterModule } from '@angular/router';
+import { CharEditDialog } from './widget/char-edit-dialog/char-edit.dialog';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RouterModule } from '@angular/router';
     CharacteristicsBarComponent,
     CharacteristicsEffectComponent,
     ShellComponent,
-    IconInputDialog
+    IconInputDialog,
+    CharEditDialog
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { RouterModule } from '@angular/router';
   entryComponents: [
     BarEditDialog,
     EffectEditDialog,
-    IconInputDialog
+    IconInputDialog,
+    CharEditDialog
   ]
 })
 export class AppModule { }

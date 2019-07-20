@@ -1,19 +1,27 @@
 .title {
-    font-size: 16pt;
-    margin: 0;
+  font-size: 16pt;
+  margin: 0;
 }
 
 .progress-bar::content {
-    background-color: red;
+  background-color: red;
 }
 
 .mat-progress-bar-fill::after {
-    background-color: red;
+  background-color: red;
 }
 
 .subtitle {
-    font-weight: bold;
-    margin: 0;
-    font-size: 1em;
-    color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  margin: 0;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.bar {
+  cursor: pointer;
+}
+
+* {
+  font-family: "Bahianita", cursive;
 }

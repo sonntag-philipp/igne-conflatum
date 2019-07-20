@@ -6,6 +6,7 @@
 .container-title {
   display: flex;
   font-size: 26pt;
+  cursor: pointer;
 }
 
 .container-title-icon {
@@ -25,7 +26,12 @@
 }
 
 .container-content-effects {
-  padding: 8px 0 8px 0;
+  padding: 8px 0 0 0;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly
+}
+
+.bar {
+  margin-bottom: 4px;
 }
