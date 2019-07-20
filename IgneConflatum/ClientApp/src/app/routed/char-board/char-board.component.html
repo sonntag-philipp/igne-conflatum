@@ -1,6 +1,21 @@
-<mat-list cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-  <mat-list-item class="example-box" *ngFor="let movie of movies" cdkDrag>
-    <mat-icon mat-list-icon>arrow_downward</mat-icon>
-    <h3>{{ movie }}</h3>
-  </mat-list-item>
-</mat-list>
+<mat-card class="header-card">
+  <h1>Character Board</h1>
+</mat-card>
+
+<div class="container">
+  <div class="row first">
+    <ic-characteristics class="characteristics"></ic-characteristics>
+  </div>
+  <div class="row second">
+    <ic-characteristics class="characteristics"></ic-characteristics>
+  </div>
+  <div class="row third">
+    <ic-characteristics class="characteristics"></ic-characteristics>
+  </div>
+  <div class="row fourth">
+    <ic-characteristics class="characteristics"></ic-characteristics>
+  </div>
+  <div class="row fifth">
+    <ic-characteristics class="characteristics"></ic-characteristics>
+  </div>
+</div>
