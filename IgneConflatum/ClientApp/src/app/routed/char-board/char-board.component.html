@@ -2,20 +2,8 @@
   <h1>Character Board</h1>
 </mat-card>
 
-<div class="container">
-  <div class="row first">
-    <ic-characteristics class="characteristics"></ic-characteristics>
-  </div>
-  <div class="row second">
-    <ic-characteristics class="characteristics"></ic-characteristics>
-  </div>
-  <div class="row third">
-    <ic-characteristics class="characteristics"></ic-characteristics>
-  </div>
-  <div class="row fourth">
-    <ic-characteristics class="characteristics"></ic-characteristics>
-  </div>
-  <div class="row fifth">
-    <ic-characteristics class="characteristics"></ic-characteristics>
+<div cdkDropList class="container" cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+  <div *ngFor="let char of characterService.characters; let i = index" cdkDrag class="row">
+    <ic-characteristics [character]="char" class="characteristics"></ic-characteristics>
   </div>
 </div>

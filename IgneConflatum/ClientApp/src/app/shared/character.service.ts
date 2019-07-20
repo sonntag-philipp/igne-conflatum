@@ -51,7 +51,7 @@ export class CharacterService {
       ]
     },
     {
-      name: "Adolf Hitler",
+      name: "Seter Piemens",
       effects: [
         {
           name: "Tischplatte",
@@ -112,38 +112,6 @@ export class CharacterService {
         {
           name: "Mana",
           value: 43,
-          max: 100
-        }
-      ]
-    },
-    {
-      name: "Joseph Stalin",
-      effects: [
-        {
-          name: "Sozialismus",
-          color: "135, 15, 105",
-          rounds: 3
-        }
-      ],
-      bars: [
-        {
-          name: "Leben",
-          value: 75,
-          max: 100
-        },
-        {
-          name: "Mana",
-          value: 43,
-          max: 100
-        }
-      ]
-    },
-    {
-      name: "Keine Ahnung",
-      bars: [
-        {
-          name: "Leben",
-          value: 32,
           max: 100
         }
       ]

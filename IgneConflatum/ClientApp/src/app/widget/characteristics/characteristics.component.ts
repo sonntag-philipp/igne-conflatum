@@ -12,17 +12,6 @@ export class CharacteristicsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.character = {
-      name: "Peter Siemens",
-      bars: [
-        {
-          name: "Mana",
-          value: 50,
-          max: 250
-        }
-      ]
-    }
-  }
+  ngOnInit() { }
 
 }

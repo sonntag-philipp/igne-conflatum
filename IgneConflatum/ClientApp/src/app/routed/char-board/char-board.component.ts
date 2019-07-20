@@ -9,7 +9,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   styleUrls: ["./char-board.component.scss"]
 })
 export class CharBoardComponent implements OnInit {
-  
+
   movies = [
     'Episode I - The Phantom Menace',
     'Episode II - Attack of the Clones',
@@ -22,7 +22,7 @@ export class CharBoardComponent implements OnInit {
   ];
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.characterService.characters, event.previousIndex, event.currentIndex);
   }
 
 
